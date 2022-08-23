@@ -4,7 +4,7 @@
     box-sizing: border-box
 
 body
-    font-family: 'Roboto'
+    font-family: 'Roboto', sans-serif
     font-weight: 400
     color: #777777
     font-size: 16px
@@ -34,7 +34,6 @@ body
             text-align: center
     .title-first
         color: #FFFFFF
-        font-family: 'Roboto', sans-serif
         &__main
             display: block
             font-weight: 800
@@ -43,9 +42,58 @@ body
             letter-spacing: 10px
             text-transform: uppercase
             margin-bottom: 10px
+            animation-name: title
+            animation-duration: 4s
+            animation-delay: 1s
+            animation-timing-function: ease
+            backface-visibility: hidden
         &__secondary
             display: block
             font-weight: 100
             font-size: 40px
             line-height: 48px
             letter-spacing: 5px
+            animation-name: title-secondary
+            animation-duration: 4s
+            animation-delay: 1s
+            animation-timing-function: ease
+            backface-visibility: hidden
+            margin-bottom: 65px
+    .btn
+        &:link, &:visited
+            text-transform: uppercase
+            text-decoration: none
+            padding: 15px 40px
+            color: #777777
+            background: white
+            border-radius: 50px
+            display: inline-block
+            transition: all .4s
+            &:hover
+                transform: translateY(-4px)
+                box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.4))
+            &:active
+                transform: translateY(-2px)
+                box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.2))
+
+@keyframes title
+    0%
+        opacity: 0
+        transform: translateX(-100px)
+    80%
+        transform: translateX(20px)
+
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+@keyframes title-secondary
+    0%
+        opacity: 0
+        transform: translateX(100px)
+    80%
+        transform: translateX(-20px)
+
+    100%
+        opacity: 1
+        transform: translateX(0px)
