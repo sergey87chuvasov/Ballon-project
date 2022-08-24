@@ -83,17 +83,42 @@ body .btn:link, body .btn:visited {
   background: white;
   border-radius: 50px;
   display: inline-block;
-  transition: all .4s;
+  transition: all .3s;
+  position: relative;
 }
 
-body .btn:link:hover, body .btn:visited:hover {
+body .btn:hover {
   transform: translateY(-4px);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
 }
 
-body .btn:link:active, body .btn:visited:active {
+body .btn:hover::after {
+  opacity: 0;
+  transform: scaleX(1.5) scaleY(1.7);
+}
+
+body .btn:active {
   transform: translateY(-2px);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+body .btn::after {
+  content: '';
+  background: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  transition: all .4s;
+}
+
+body .btn_animated {
+  animation: btn .5s ease-out .7s;
+  animation-fill-mode: backwards;
 }
 
 @keyframes title {
@@ -121,5 +146,16 @@ body .btn:link:active, body .btn:visited:active {
   100% {
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+
+@keyframes btn {
+  0% {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
