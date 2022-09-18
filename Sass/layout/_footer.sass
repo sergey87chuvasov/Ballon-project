@@ -7,6 +7,7 @@
 
     &__list
         list-style: none
+        text-align: center
     &__item
         display: inline-block
         &:not(:last-child)
@@ -14,6 +15,8 @@
         @include respond(tab-land)
             &:not(:last-child)
                 margin-right: 1.5rem
+        @include respond(tab-port)
+            margin: 0 2rem 2rem 0
 
     &__link
         &:link, &:visited

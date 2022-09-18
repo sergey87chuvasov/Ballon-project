@@ -13,7 +13,7 @@
     padding-top: 5rem
     padding-left: 5rem
     @include respond(tab-port)
-        width: 100%
+        width: 85%
         padding-top: 3rem
         padding-left: 4rem
     &__group:not(:last-child)
@@ -37,6 +37,9 @@
         border-bottom: .2rem solid transparent
         border-radius: .5rem
         width: 65%
+        @include respond(tab-port)
+            width: 90%
+            box-shadow: $box-shadow
         &:focus
             outline: none
             border-bottom: .3rem solid #66D763
