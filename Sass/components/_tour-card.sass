@@ -4,7 +4,7 @@
     -moz-perspective: 150rem
     position: relative
     @include respond(tab-port)
-        height: 60rem
+        height: auto
     &__side
         height: 50rem
         transition: .4s all ease-out
@@ -18,14 +18,26 @@
         border-radius: .5rem
         overflow: hidden
         @include respond(tab-port)
-            height: 60rem
+            height: auto
+            position: relative
         &_front
+            @include respond(tab-port)
+                padding-bottom: 13rem
         &_back
             background: green
             transform: rotateY(180deg)
             background: linear-gradient(120deg, $color-brown-light, $color-brown-dark)
+            @include respond(tab-port)
+                transform: rotateY(0deg)
+                clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%)
+                padding-top: 8rem;
+                margin-top: -10rem
+                margin-bottom: 5rem
+                padding-bottom: 5rem;
     &:hover &__side_front
         transform: rotateY(-180deg)
+        @include respond(tab-port)
+            transform: rotateY(0deg)
 
     &:hover &__side_back
         transform: rotateY(0deg)
@@ -53,8 +65,8 @@
         top: 13rem
         right: 0rem
         @include respond(tab-port)
-        top: 21rem
-        font-size: 3.0rem
+            top: 21rem
+            font-size: 3.0rem
     &__span
         background: linear-gradient(90deg, $color-brown-light, $color-brown-dark )
         padding: 1rem 2rem .3rem 2rem
@@ -66,7 +78,7 @@
             padding-bottom: 1rem
             padding-top: 0
             @include respond(tab-port)
-            top: 3.7rem
+                top: 3.7rem
     &__descr
         ul
             margin: 0 auto
@@ -85,13 +97,18 @@
                     font-size: 1.5rem
                 @include respond(tab-port)
                     font-size: 1.9rem
-                    
 
     &__backSide-box
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
+        @include respond(tab-port)
+            position: relative
+            top: 0%
+            left: 0%
+            transform: translate(0%, 0%)
+            text-align: center
     &__text
         margin-bottom: 8rem
         letter-spacing: .2rem
