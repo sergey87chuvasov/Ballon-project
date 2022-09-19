@@ -944,6 +944,12 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
 
+@media (min-resolution: 192dpi) and (min-width: 670px), (min-width: 1340px) {
+  .header {
+    background: linear-gradient(90.05deg, rgba(0, 0, 0, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url("../img/header-bg-big.jpg") center/cover no-repeat;
+  }
+}
+
 .header__logo {
   position: absolute;
   left: 5rem;
