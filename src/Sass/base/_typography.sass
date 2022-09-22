@@ -1,0 +1,83 @@
+body
+    font-family: 'Roboto', sans-serif
+    font-weight: 400
+    color: $color-gray
+    font-size: $font-size-paragraph
+    letter-spacing: .2rem
+
+.title-first
+    color: $color-white
+    &__main
+        display: block
+        font-weight: 800
+        font-size: 5rem
+        line-height: 6rem
+        letter-spacing: 1rem
+        text-transform: uppercase
+        margin-bottom: 1rem
+        animation-name: title
+        animation-duration: 4s
+        animation-delay: 1s
+        animation-timing-function: ease
+        backface-visibility: hidden
+        @include respond(tab-land)
+            font-size: 4rem
+        @include respond(tab-port)
+            font-size: 3.4rem
+            letter-spacing: 0.5rem
+            margin-bottom: 0
+        &__secondary
+            display: block
+            font-weight: 100
+            font-size: 4rem
+            line-height: 4.8rem
+            letter-spacing: .5rem
+            animation-name: title-secondary
+            animation-duration: 4s
+            animation-delay: 1s
+            animation-timing-function: ease
+            backface-visibility: hidden
+            margin-bottom: 6.5rem
+            @include respond(tab-land)
+                font-size: 3.5rem
+                margin-bottom: 3.5rem
+            @include respond(tab-port)
+                font-size: 3.0rem
+                letter-spacing: 0.2rem
+
+.title-secondary
+    text-align: center
+    font-size: $font-size-paragraph-h2
+    letter-spacing: 1rem
+    text-transform: uppercase
+    font-weight: 800
+    background: linear-gradient(90deg, $color-brown-light, $color-brown-dark )
+    -webkit-background-clip: text
+    color: transparent
+    transition: all .4s
+    backface-visibility: hidden
+    @include respond(tab-land)
+        font-size: 3rem
+    @include respond(tab-port)
+        letter-spacing: .4rem
+    &:hover
+        transform: skewY(2deg) skewX(15deg) scale(1.1)
+        text-shadow: $shadow-h2
+    &_white
+        color: $color-white
+
+.title-third
+    font-size: $font-size-paragraph-h3
+    letter-spacing: .2rem
+    text-transform: uppercase
+    font-weight: 700
+    @include respond(tab-land)
+        font-size: 1.8rem
+
+.paragraph
+    font-size: $font-size-paragraph
+    letter-spacing: .2rem
+    line-height: 140%
+    font-weight: 400
+    @include respond(tab-land)
+        font-size: 1.5rem
